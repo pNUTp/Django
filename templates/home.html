@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome To My Website!</h1>
+    
+    {% if user.is_authenticated %}
+        <p class="lead">Hello, {{ user.username }}!</p>
+        <p>This is your personalized section.</p>
+    {% else %}
+        <p class="lead">Hello, guest user!</p>
+        <p>Please log in or register to access personalized features.</p>
+    {% endif %}
+</div>
+{% endblock %}
